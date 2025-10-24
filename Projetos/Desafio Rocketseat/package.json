@@ -1,0 +1,23 @@
+{
+  "name": "desafio-rocketseat-nodejs",
+  "version": "1.0.0",
+  "description": "API de gerenciamento de tarefas - Desafio Rocketseat",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.2"
+  },
+  "keywords": [
+    "nodejs",
+    "api",
+    "tasks",
+    "crud",
+    "rocketseat"
+  ],
+  "author": "Jhonatan Barboza",
+  "license": "MIT"
+}
