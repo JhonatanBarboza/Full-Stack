@@ -1,4 +1,4 @@
-import './ErrorMessage.css';
+import '../styles/components/ErrorMessage.css';
 
 const ErrorMessage = ({ message, onClose }) => {
   if (!message) return null;

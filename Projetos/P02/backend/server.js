@@ -162,7 +162,7 @@ app.use('*', (req, res) => {
 
 // Iniciar o servidor
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando na porta ${PORT}`);
-  console.log(`📝 API Todo List disponível em http://localhost:${PORT}/api`);
-  console.log(`❤️  Health check: http://localhost:${PORT}/api/health`);
+  console.log(` Servidor rodando na porta ${PORT}`);
+  console.log(` API Todo List disponível em http://localhost:${PORT}/api`);
+  console.log(`  Health check: http://localhost:${PORT}/api/health`);
 });

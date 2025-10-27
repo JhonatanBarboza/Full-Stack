@@ -1,17 +1,20 @@
 # 📝 Todo List - Projeto Full Stack
 
-Projeto didático de um sistema de gerenciamento de tarefas (Todo List) completo, desenvolvido com **React + Vite** no frontend e **Node.js + Express** no backend.
+Projeto didático de um sistema de gerenciamento de tarefas (Todo List) completo, desenvolvido com **React + Vite** no frontend e **Node.js + Express** no backend, seguindo **arquitetura componentizada** e as melhores práticas de desenvolvimento.
 
 ## 🎯 Objetivo
 
-Este projeto serve como exemplo prático de implementação de uma aplicação Full Stack simples e didática, demonstrando:
+Este projeto serve como exemplo prático de implementação de uma aplicação Full Stack moderna e didática, demonstrando:
 
+- **Arquitetura componentizada** com separação de responsabilidades
+- **Múltiplas páginas** com navegação SPA
+- **Dashboard analítico** com estatísticas e gráficos
 - Comunicação entre frontend e backend
 - CRUD completo (Create, Read, Update, Delete)
-- API RESTful
+- API RESTful bem estruturada
 - Interface responsiva e moderna
-- Tratamento de erros
-- Boas práticas de desenvolvimento
+- Tratamento de erros e loading states
+- **Organização de código** para projetos escaláveis
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -24,29 +27,45 @@ Este projeto serve como exemplo prático de implementação de uma aplicação F
 
 ### Frontend
 - **React 18** - Biblioteca para interfaces
-- **Vite** - Build tool e dev server
-- **CSS3** - Estilização com gradientes e animações
+- **Vite** - Build tool e dev server rápido
+- **React Router DOM** - Roteamento SPA
+- **CSS3** - Estilização moderna com gradientes e animações
 - **Fetch API** - Requisições HTTP
 
 ## 📂 Estrutura do Projeto
 
 ```
 P02/
-├── backend/                 # API Node.js
+├── backend/                    # API Node.js
 │   ├── package.json
-│   ├── server.js           # Servidor principal
+│   ├── server.js              # Servidor principal
 │   └── README.md
 │
-├── frontend/               # Interface React
+├── frontend/                   # Interface React
 │   ├── src/
-│   │   ├── App.jsx        # Componente principal
-│   │   ├── App.css        # Estilos da aplicação
-│   │   ├── index.css      # Estilos globais
-│   │   └── main.jsx       # Ponto de entrada
+│   │   ├── components/        # Componentes reutilizáveis
+│   │   │   ├── Navigation.jsx # Barra de navegação
+│   │   │   ├── TodoForm.jsx   # Formulário de tarefas
+│   │   │   ├── TodoItem.jsx   # Item individual
+│   │   │   ├── TodoList.jsx   # Lista de tarefas
+│   │   │   └── ErrorMessage.jsx # Componente de erro
+│   │   ├── pages/             # Páginas da aplicação
+│   │   │   ├── TodosPage.jsx  # Página principal
+│   │   │   └── DashboardPage.jsx # Dashboard analítico
+│   │   ├── hooks/             # Custom hooks
+│   │   │   └── useTodos.js    # Hook de gerenciamento
+│   │   ├── services/          # Camada de serviços
+│   │   │   └── api.js         # Comunicação com API
+│   │   ├── styles/            # Estilos organizados
+│   │   │   ├── components/    # Estilos dos componentes
+│   │   │   ├── pages/         # Estilos das páginas
+│   │   │   └── globals.css    # Estilos globais
+│   │   ├── App.jsx            # Roteamento principal
+│   │   └── main.jsx           # Ponto de entrada
 │   ├── package.json
 │   └── README.md
 │
-└── README.md              # Este arquivo
+└── README.md                  # Este arquivo
 ```
 
 ## 🚀 Como Executar
@@ -69,21 +88,20 @@ A interface estará disponível em: `http://localhost:5173`
 
 ## 📋 Funcionalidades
 
-### ✅ Operações CRUD
+### 📝 Lista de Tarefas (TodosPage)
 - **Create**: Adicionar novas tarefas com título e descrição
 - **Read**: Listar todas as tarefas com seus detalhes
 - **Update**: Marcar como concluída/pendente e editar conteúdo
 - **Delete**: Remover tarefas
+- **Navigation**: Navegação fluida entre páginas
 
-### ✨ Interface
-- Design moderno com tons de branco, cinza e azul
-- Caixas de seleção customizadas e elegantes
-- Campo de título e descrição para tarefas
-- Animações suaves de interação
-- Layout responsivo para mobile
-- Estados de loading e erro
-- Contador de tarefas concluídas
-- Feedback visual para ações
+### 📊 Dashboard Analítico (DashboardPage)
+- **Estatísticas visuais**: Total, Concluídas, Pendentes
+- **Taxa de conclusão** em porcentagem
+- **Barra de progresso** visual animada
+- **Tarefas recentes** (últimas 5 criadas)
+- **Resumo de atividade** diária
+- **Indicador de produtividade** inteligente
 
 ## 🔧 API Endpoints
 
@@ -94,52 +112,3 @@ A interface estará disponível em: `http://localhost:5173`
 | POST | `/api/todos` | Criar nova tarefa |
 | PUT | `/api/todos/:id` | Atualizar tarefa |
 | DELETE | `/api/todos/:id` | Deletar tarefa |
-
-## 💡 Conceitos Demonstrados
-
-### Backend
-- Estruturação de API RESTful
-- Middlewares (CORS, JSON parser)
-- Tratamento de erros
-- Validação de dados (título obrigatório, descrição opcional)
-- Resposta padronizada da API
-- Suporte a título e descrição nas tarefas
-
-### Frontend
-- Hooks do React (useState, useEffect)
-- Requisições assíncronas
-- Gerenciamento de estado
-- Componentização
-- CSS responsivo com design moderno
-- Tratamento de erros na UI
-- Formulário com múltiplos campos
-- Caixas de seleção customizadas
-
-## 🎨 Screenshots
-
-A aplicação possui uma interface moderna e intuitiva:
-- Header com título e descrição
-- Formulário para adicionar tarefas
-- Lista de tarefas com ações
-- Contador de tarefas concluídas
-- Estados de loading e erro
-- Design responsivo
-
-## 🔮 Possíveis Melhorias
-
-- [ ] Persistência em banco de dados
-- [ ] Autenticação de usuários
-- [ ] Edição inline de tarefas
-- [ ] Filtros (todas, pendentes, concluídas)
-- [ ] Drag & drop para reordenar
-- [ ] Categorias de tarefas
-- [ ] Data de vencimento
-- [ ] Modo escuro/claro
-
-## 📝 Licença
-
-Este projeto é livre para uso educacional e didático.
-
----
-
-**Desenvolvido como exemplo de implementação Full Stack simples e didática** 🚀

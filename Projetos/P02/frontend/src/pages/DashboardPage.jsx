@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTodos } from '../hooks/useTodos';
-import './DashboardPage.css';
+import '../styles/pages/DashboardPage.css';
 
 const DashboardPage = () => {
   const { todos, loading, error } = useTodos();

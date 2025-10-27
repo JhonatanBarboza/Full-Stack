@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import TodosPage from './pages/TodosPage';
 import DashboardPage from './pages/DashboardPage';
 import './styles/globals.css';
+import './styles/App.css';
 
 function App() {
   return (

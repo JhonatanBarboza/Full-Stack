@@ -2,7 +2,7 @@ import { useTodos } from '../hooks/useTodos';
 import TodoForm from '../components/TodoForm';
 import TodoList from '../components/TodoList';
 import ErrorMessage from '../components/ErrorMessage';
-import './TodosPage.css';
+import '../styles/pages/TodosPage.css';
 
 const TodosPage = () => {
   const { 

@@ -1,4 +1,4 @@
-import './TodoItem.css';
+import '../styles/components/TodoItem.css';
 
 const TodoItem = ({ todo, onToggle, onDelete }) => {
   return (

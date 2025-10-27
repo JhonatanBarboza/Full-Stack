@@ -1,5 +1,5 @@
 import TodoItem from './TodoItem';
-import './TodoList.css';
+import '../styles/components/TodoList.css';
 
 const TodoList = ({ todos, onToggle, onDelete, stats }) => {
   if (todos.length === 0) {
