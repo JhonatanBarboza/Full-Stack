@@ -1,0 +1,28 @@
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fef5e7;
+  color: #c05621;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #fed7aa;
+  box-shadow: 0 4px 15px rgba(192, 86, 33, 0.1);
+}
+
+.close-error {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #c05621;
+  padding: 4px;
+  margin-left: 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.close-error:hover {
+  background-color: rgba(192, 86, 33, 0.1);
+}
