@@ -12,8 +12,8 @@ function App() {
         <Navigation />
         <div className="app-content">
           <Routes>
-            <Route path="/" element={<TodosPage />} />
-            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/" element={<TodosPage />} /> 
+            <Route path="/dashboard" element={<DashboardPage />} /> 
           </Routes>
         </div>
       </div>

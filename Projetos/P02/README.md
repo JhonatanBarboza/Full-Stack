@@ -41,27 +41,27 @@ P02/
 │   ├── server.js              # Servidor principal
 │   └── README.md
 │
-├── frontend/                   # Interface React
+├── frontend/                      # Interface React
 │   ├── src/
-│   │   ├── components/        # Componentes reutilizáveis
-│   │   │   ├── Navigation.jsx # Barra de navegação
-│   │   │   ├── TodoForm.jsx   # Formulário de tarefas
-│   │   │   ├── TodoItem.jsx   # Item individual
-│   │   │   ├── TodoList.jsx   # Lista de tarefas
-│   │   │   └── ErrorMessage.jsx # Componente de erro
-│   │   ├── pages/             # Páginas da aplicação
-│   │   │   ├── TodosPage.jsx  # Página principal
-│   │   │   └── DashboardPage.jsx # Dashboard analítico
-│   │   ├── hooks/             # Custom hooks
-│   │   │   └── useTodos.js    # Hook de gerenciamento
-│   │   ├── services/          # Camada de serviços
-│   │   │   └── api.js         # Comunicação com API
-│   │   ├── styles/            # Estilos organizados
-│   │   │   ├── components/    # Estilos dos componentes
-│   │   │   ├── pages/         # Estilos das páginas
-│   │   │   └── globals.css    # Estilos globais
-│   │   ├── App.jsx            # Roteamento principal
-│   │   └── main.jsx           # Ponto de entrada
+│   │   ├── components/            # Componentes reutilizáveis
+│   │   │   ├── Navigation.jsx     # Barra de navegação
+│   │   │   ├── TodoForm.jsx       # Formulário de tarefas
+│   │   │   ├── TodoItem.jsx       # Item individual
+│   │   │   ├── TodoList.jsx       # Lista de tarefas
+│   │   │   └── ErrorMessage.jsx   # Componente de erro
+│   │   ├── pages/                 # Páginas da aplicação
+│   │   │   ├── TodosPage.jsx      # Página principal (Implementa com componentes reutilizáveis)
+│   │   │   └── DashboardPage.jsx  # Dashboard analítico (Implementado em uma unica página)
+│   │   ├── hooks/                 # Custom hooks
+│   │   │   └── useTodos.js        # Hook de gerenciamento
+│   │   ├── services/              # Camada de serviços
+│   │   │   └── api.js             # Comunicação com API
+│   │   ├── styles/                # Estilos organizados
+│   │   │   ├── components/        # Estilos dos componentes
+│   │   │   ├── pages/             # Estilos das páginas
+│   │   │   └── globals.css        # Estilos globais
+│   │   ├── App.jsx                # Roteamento principal
+│   │   └── main.jsx               # Ponto de entrada
 │   ├── package.json
 │   └── README.md
 │

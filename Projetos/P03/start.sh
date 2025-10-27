@@ -17,7 +17,7 @@ cleanup() {
 trap cleanup SIGINT
 
 # Diretório base do projeto
-PROJECT_DIR="/home/jhonatan/Documentos/Full-Stack/Projetos/P02"
+PROJECT_DIR="/home/jhonatan/Documentos/Full-Stack/Projetos/P03"
 
 # Verificar se os diretórios existem
 if [ ! -d "$PROJECT_DIR/backend" ]; then
