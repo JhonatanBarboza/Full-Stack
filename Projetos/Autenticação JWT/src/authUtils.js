@@ -4,7 +4,7 @@ import * as jose from 'jose'
 const JWT_SECRET = new TextEncoder().encode('sua-chave-secreta-muito-segura-aqui')
 
 // Tempo de expiração do token
-const TOKEN_EXPIRY = '10s'  // Alterado para 10 segundos para testes rápidos
+const TOKEN_EXPIRY = '7s'  // Alterado para 10 segundos para testes rápidos
 
 /**
  * Gera um token JWT para o usuário

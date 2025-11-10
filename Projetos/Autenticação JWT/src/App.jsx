@@ -132,7 +132,29 @@ function App() {
     setMessage('Usuário cadastrado com sucesso!')
     setNewUsername('')
     setNewPassword('')
-    setShowRegister(false)
+    setShowRegister(false) // Volta para a lista de usuários após o cadastro
+  }
+  
+  const handleDeleteUser = (userToDelete) => {
+    // Não permitir deletar o próprio usuário logado
+    if (userToDelete.username === loggedUser) {
+      setMessage('Você não pode deletar seu próprio usuário!')
+      return
+    }
+    
+    // Não permitir deletar o último admin
+    const adminUsers = users.filter(u => u.isAdmin)
+    if (userToDelete.isAdmin && adminUsers.length === 1) {
+      setMessage('Não é possível deletar o último administrador!')
+      return
+    }
+    
+    // Confirmar exclusão
+    if (window.confirm(`Tem certeza que deseja deletar o usuário "${userToDelete.username}"?`)) {
+      const updatedUsers = users.filter(u => u.username !== userToDelete.username)
+      setUsers(updatedUsers)
+      setMessage(`Usuário "${userToDelete.username}" deletado com sucesso!`)
+    }
   }
   
   const handleLogout = () => {
@@ -238,63 +260,75 @@ function App() {
             {isAdmin && (
               <div className="admin-panel">
                 <h2>Painel do Administrador</h2>
-                <button 
-                  className="login-button"
-                  onClick={() => setShowRegister(true)}
-                >
-                  Cadastrar Novo Usuário
-                </button>
                 
-                <div className="users-list">
-                  <h3>Usuários Cadastrados:</h3>
-                  <ul>
-                    {users.map((user, index) => (
-                      <li key={index}>
-                        {user.username} {user.isAdmin && '(Admin)'}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {!showRegister ? (
+                  <>
+                    <button 
+                      className="login-button"
+                      onClick={() => setShowRegister(true)}
+                    >
+                      Cadastrar Novo Usuário
+                    </button>
+                    
+                    <div className="users-list">
+                      <h3>Usuários Cadastrados:</h3>
+                      <ul>
+                        {users.map((user, index) => (
+                          <li key={index} className="user-item">
+                            <span className="user-info">
+                              {user.username} {user.isAdmin && '(Admin)'}
+                            </span>
+                            <button 
+                              className="delete-button"
+                              onClick={() => handleDeleteUser(user)}
+                              title={`Deletar usuário ${user.username}`}
+                            >
+                              🗑️
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
+                ) : (
+                  <form onSubmit={handleRegister} className="login-form">
+                    <h3>Cadastrar Novo Usuário</h3>
+                    <div className="form-group">
+                      <label htmlFor="newUsername">Usuário:</label>
+                      <input
+                        type="text"
+                        id="newUsername"
+                        value={newUsername}
+                        onChange={(e) => setNewUsername(e.target.value)}
+                        placeholder="Digite o nome do usuário"
+                      />
+                    </div>
+                    
+                    <div className="form-group">
+                      <label htmlFor="newPassword">Senha:</label>
+                      <input
+                        type="password"
+                        id="newPassword"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                        placeholder="Digite a senha"
+                      />
+                    </div>
+                    
+                    <button type="submit" className="login-button">
+                      Cadastrar
+                    </button>
+                    
+                    <button 
+                      type="button" 
+                      className="login-button"
+                      onClick={() => setShowRegister(false)}
+                    >
+                      Cancelar
+                    </button>
+                  </form>
+                )}
               </div>
-            )}
-            
-            {showRegister && isAdmin && (
-              <form onSubmit={handleRegister} className="login-form">
-                <h3>Cadastrar Novo Usuário</h3>
-                <div className="form-group">
-                  <label htmlFor="newUsername">Usuário:</label>
-                  <input
-                    type="text"
-                    id="newUsername"
-                    value={newUsername}
-                    onChange={(e) => setNewUsername(e.target.value)}
-                    placeholder="Digite o nome do usuário"
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="newPassword">Senha:</label>
-                  <input
-                    type="password"
-                    id="newPassword"
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                    placeholder="Digite a senha"
-                  />
-                </div>
-                
-                <button type="submit" className="login-button">
-                  Cadastrar
-                </button>
-                
-                <button 
-                  type="button" 
-                  className="login-button"
-                  onClick={() => setShowRegister(false)}
-                >
-                  Cancelar
-                </button>
-              </form>
             )}
             
             <button className="logout-button" onClick={handleLogout}>
